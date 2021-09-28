@@ -8,7 +8,10 @@ module.exports = {
         middleware = (req, res, next) => next(),
         onError = (err, res) => {
             res.status(500);
-            res.jsonp(err);
+            res.jsonp({ 
+                message: err.message,
+                stack: err.stack
+            });
         }
     }) => {
         return nodeGlobLoader.load(`${basePath}/**/*routes*.js`, (exports, filename) => {
