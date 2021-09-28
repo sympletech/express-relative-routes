@@ -1,7 +1,7 @@
-import path from 'path';
-import nodeGlobLoader from 'node-glob-loader';
+const path = require('path');
+const nodeGlobLoader = require('node-glob-loader');
 
-export default {
+module.exports = {
     init: ({
         app,
         basePath,
@@ -33,7 +33,7 @@ export default {
                     options
                 });
 
-                if(!options.preventDefault){
+                if (!options.preventDefault) {
                     res.jsonp(result);
                 }
             } catch (err) {
