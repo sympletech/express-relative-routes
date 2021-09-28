@@ -1,7 +1,7 @@
 import path from 'path';
 import nodeGlobLoader from 'node-glob-loader';
 
-module.exports = {
+export default {
     init: ({
         app,
         basePath,
