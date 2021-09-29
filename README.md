@@ -16,7 +16,7 @@ Adds built in error handling at the route level so you do not need to add try/ca
     const expressRelativeApiRoutes = require('express-relative-api-routes');
 
     const app = express();
-    expressRelativeApiRoutes.init({
+    await expressRelativeApiRoutes.init({
         app,
         basePath: './api',
         middleware: (req, res, next) => next(),     // Optional middleware to add to each route
