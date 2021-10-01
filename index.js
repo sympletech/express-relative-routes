@@ -7,8 +7,9 @@ module.exports = {
         basePath,
         middleware = (req, res, next) => next(),
         onError = (err, res) => {
+            console.log(err);
             res.status(500);
-            res.jsonp({ 
+            res.jsonp({
                 message: err.message,
                 stack: err.stack
             });
