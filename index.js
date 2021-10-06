@@ -29,6 +29,8 @@ module.exports = {
         async function handleApiAction({ action, req, res, next, options = {} }) {
             try {
                 const payload = ((req.method === "POST" || req.method === "PUT") ? req.body : req.query) || {};
+                payload.req = req;
+                payload.res = res;
 
                 const result = await action(payload, {
                     req,
